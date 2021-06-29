@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header">
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="login.css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!------ Include the above in your HEAD tag ---------->
+
+</head>
+
+
+<body>
+	<div class="container">
+
+
+
+		<div class="wrapper fadeInDown">
+			<br>
+			<br>
+			<h5 class="center-block" style="text-align: center;">Welcome to
+				Admin Portal for Le's Bookstore.</h5>
+			<br>
+			<div id="formContent">
+				<!-- Tabs Titles -->
+
+				<!-- Icon -->
+				<div class="fadeIn first">
+
+					<img th:src="@{/image/logo.png}" class="img-responsive"
+						style="width: 350px; margin: auto;" />
+
+
+				</div>
+
+				<!-- Login Form -->
+				<div class="bg-danger" th:if="${param.error}">Invalid username
+					and password.</div>
+				<div class="bg-danger" th:if="${param.logout}">You have been
+					logged out.</div>
+
+				<form class="form-signin" th:action="@{/login}" method="post">
+
+
+
+					<input type="text" id="login" class="fadeIn second" name="username"
+						placeholder="username" > <input
+						type="password" class="fadeIn third" name="password"
+						placeholder="password" id="password"> <input type="submit"
+						class="fadeIn fourth" value="Log In">
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div th:replace="common/header :: body-bottom-scripts"></div>
+
+</body>
+</html>
